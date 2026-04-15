@@ -6,9 +6,9 @@ myArray = []
 while i < 6:
     numbers = input()
     try:
-        if float(numbers):
-            myArray.append(float(numbers))
-            i += 1
+        val = float(numbers)
+        myArray.append(val)
+        i += 1
     except ValueError:
         print("Could not parse a number. Please, try again")
 
