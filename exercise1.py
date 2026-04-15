@@ -19,7 +19,7 @@ c = math.sqrt(math.pow(myArray[4] - myArray[2], 2) + math.pow(myArray[5] - myArr
 
 if ((a + b) > c) and ((a + c) > b) and ((b + c) > a):
     Perimetr = a + b + c
-    print(f'Perimeter: {Perimetr:3f}')
+    print(f'Perimeter: {Perimetr:.3f}')
 else: print("It's not a triangle")
 
 
