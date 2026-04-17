@@ -3,12 +3,12 @@ class Exercise4:
         while True:
             raw_size = input()
             try:
-                n = int(raw_size)
-                if n <= 0:
+                n_len = int(raw_size)
+                if n_len <= 0:
                     print("Input error. Size <= 0")
                     return []
                 my_array = []
-                while len(my_array) < n:
+                while len(my_array) < n_len:
                     val = input()
                     try:
                         num = int(val)
