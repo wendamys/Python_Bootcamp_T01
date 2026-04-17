@@ -18,15 +18,15 @@ class Exercise5:
         while True:
             val = input()
             try:
-                num_len = int(val)
-                if num_len <= 0:
+                n_len = int(val)
+                if n_len <= 0:
                     print("Input error. Size <= 0")
                 user_numbers = input().split()
                 for x in user_numbers:
                     try:
-                        value_input_user = int(x)
-                        my_arr.append(value_input_user)
-                        if num_len == len(my_arr):
+                        val = int(x)
+                        my_arr.append(val)
+                        if n_len == len(my_arr):
                             return my_arr
                     except ValueError:
                         print("Could not parse a number. Please, try again")
