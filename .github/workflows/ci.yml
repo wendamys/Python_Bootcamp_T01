@@ -1,14 +1,14 @@
-name: Python Tests
+name: Python Tests & Lint
 
 on:
   push:
-    branches: [ "main", "develop" ] # Запуск при пуше в main или develop
+    branches: [ "main", "develop" ]
   pull_request:
     branches: [ "main", "develop" ]
 
 jobs:
   test:
-    runs-on: ubuntu-latest # Тесты лучше гонять на linux (быстрее и дешевле), pytest везде одинаков
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -17,12 +17,20 @@ jobs:
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12" # Ваша версия из логов PowerShell
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install flake8  # Устанавливаем линтер отдельно или добавьте его в requirements.txt
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Lint with flake8
+        run: |
+          # Остановка сборки при критических ошибках (синтаксис, неопределенные переменные)
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # Предупреждения (PEP8): не останавливаем сборку, но выводим в логи
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Run tests with pytest
         run: pytest -v
