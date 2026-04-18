@@ -1,5 +1,6 @@
 import pytest
 
+
 class TestPerimeter:
 
     @pytest.mark.smoke
@@ -22,7 +23,7 @@ class TestPerimeter:
     ])
     def test_user_input(self, monkeypatch, perimeter, numbers, expected_result):
         answers = iter(map(str, numbers))
-        monkeypatch.setattr("builtins.input", lambda _=None:  next(answers))
+        monkeypatch.setattr("builtins.input", lambda _=None: next(answers))
         result = perimeter.user_input()
         assert result == expected_result
 

@@ -36,6 +36,7 @@ class Exercise3:
                 my_arr = [f0, f1, fn, "", count]
                 return my_arr
 
+
 object3 = Exercise3()
 arr_user_input = object3.input_user()
 object3.recursive(*arr_user_input)

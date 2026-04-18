@@ -20,7 +20,6 @@ class Exercise4:
             except ValueError:
                 print("Could not parse a number. Please, try again")
 
-
     def find_mean_negative_numbers(self, arr):
         if not arr:
             return

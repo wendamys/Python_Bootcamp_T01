@@ -1,17 +1,22 @@
 import math
 
+
 class Perimeter:
 
     def calc_the_perimeter_of_triangle(self, *myArray):
 
-        a = math.sqrt(math.pow(myArray[2] - myArray[0], 2) + math.pow(myArray[3] - myArray[1], 2))
-        b = math.sqrt(math.pow(myArray[4] - myArray[0], 2) + math.pow(myArray[5] - myArray[1], 2))
-        c = math.sqrt(math.pow(myArray[4] - myArray[2], 2) + math.pow(myArray[5] - myArray[3], 2))
+        a = math.sqrt(
+            math.pow(myArray[2] - myArray[0], 2) + math.pow(myArray[3] - myArray[1], 2))
+        b = math.sqrt(
+            math.pow(myArray[4] - myArray[0], 2) + math.pow(myArray[5] - myArray[1], 2))
+        c = math.sqrt(
+            math.pow(myArray[4] - myArray[2], 2) + math.pow(myArray[5] - myArray[3], 2))
 
         if ((a + b) > c) and ((a + c) > b) and ((b + c) > a):
             Perimetr = a + b + c
             return Perimetr
-        else: return None
+        else:
+            return None
 
     def user_input(self):
         myArray = []
@@ -34,7 +39,7 @@ class Perimeter:
         return None
 
 
-#object1 = Perimeter()
-#array = object1.user_input()
-#perimetr = object1.calc_the_perimeter_of_triangle(*array)
-#object1.print_result_calc_the_perimeter(perimetr)
+# object1 = Perimeter()
+# array = object1.user_input()
+# perimetr = object1.calc_the_perimeter_of_triangle(*array)
+# object1.print_result_calc_the_perimeter(perimetr)
