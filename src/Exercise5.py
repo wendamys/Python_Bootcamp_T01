@@ -12,7 +12,6 @@ class Exercise5:
         else:
             print("There are no such elements")
 
-
     def input_user(self):
         my_arr = []
         while True:
@@ -33,7 +32,6 @@ class Exercise5:
                         my_arr = []
             except ValueError:
                 print("Could not parse a number. Please, try again")
-s
 
 obj5 = Exercise5()
 test = obj5.input_user()
