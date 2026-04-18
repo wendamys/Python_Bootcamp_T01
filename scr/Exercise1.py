@@ -10,8 +10,8 @@ class Perimeter:
 
         if ((a + b) > c) and ((a + c) > b) and ((b + c) > a):
             Perimetr = a + b + c
-            print(f'Perimeter: {Perimetr:.3f}')
-        else: print("It's not a triangle")
+            return Perimetr
+        else: return None
 
     def user_input(self):
         myArray = []
@@ -26,7 +26,13 @@ class Perimeter:
                 print("Could not parse a number. Please, try again")
         return myArray
 
+    def print_result_calc_the_perimeter(self, perimetr):
+        if perimetr is not None:
+            return print(f'Perimeter: {perimetr:.3f}')
+        return print("It's not a triangle")
+
 
 object1 = Perimeter()
 array = object1.user_input()
-object1.calc_the_perimeter_of_triangle(*array)
+perimetr = object1.calc_the_perimeter_of_triangle(*array)
+object1.print_result_calc_the_perimeter(perimetr)
