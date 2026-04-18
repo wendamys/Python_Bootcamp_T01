@@ -1,18 +1,18 @@
 class Exercise3:
 
-    def recursive(self, f0, f1, Fn, number_is_user, count):
+    def recursive(self, f0, f1, fn, number_is_user, count):
         if number_is_user == "":
             new_data = self.input_user()
             self.recursive(*new_data)
             return
         if number_is_user > count:
-            Fn = f0 + f1
+            fn = f0 + f1
             f0 = f1
-            f1 = Fn
+            f1 = fn
             count += 1
-            self.recursive(f0, f1, Fn, number_is_user, count)
+            self.recursive(f0, f1, fn, number_is_user, count)
         else:
-            print(Fn)
+            print(fn)
 
     def input_user(self):
         f0 = 0
