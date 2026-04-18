@@ -17,7 +17,7 @@ class Exercise3:
     def input_user(self):
         f0 = 0
         f1 = 1
-        Fn = 0
+        fn = 0
         count = 1
         while True:
             raw_size = input()
@@ -29,11 +29,11 @@ class Exercise3:
                 if 0 <= value <= 1:
                     print(value)
                     return ""
-                my_arr = [f0, f1, Fn, value, count]
+                my_arr = [f0, f1, fn, value, count]
                 return my_arr
             except ValueError:
                 print("Could not parse a number. Please, try again")
-                my_arr = [f0, f1, Fn, "", count]
+                my_arr = [f0, f1, fn, "", count]
                 return my_arr
 
 
