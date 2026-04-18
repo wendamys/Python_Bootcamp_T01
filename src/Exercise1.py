@@ -28,11 +28,13 @@ class Perimeter:
 
     def print_result_calc_the_perimeter(self, perimetr):
         if perimetr is not None:
-            return print(f'Perimeter: {perimetr:.3f}')
-        return print("It's not a triangle")
+            print(f'Perimeter: {perimetr:.3f}')
+            return perimetr
+        print("It's not a triangle")
+        return None
 
 
-object1 = Perimeter()
-array = object1.user_input()
-perimetr = object1.calc_the_perimeter_of_triangle(*array)
-object1.print_result_calc_the_perimeter(perimetr)
+#object1 = Perimeter()
+#array = object1.user_input()
+#perimetr = object1.calc_the_perimeter_of_triangle(*array)
+#object1.print_result_calc_the_perimeter(perimetr)

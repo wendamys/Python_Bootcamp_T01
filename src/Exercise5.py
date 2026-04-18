@@ -33,7 +33,7 @@ class Exercise5:
                         my_arr = []
             except ValueError:
                 print("Could not parse a number. Please, try again")
-
+s
 
 obj5 = Exercise5()
 test = obj5.input_user()

@@ -1,5 +1,5 @@
-
 class Time:
+
     def user_input(self):
         while True:
             user_input = input()
