@@ -4,7 +4,8 @@ import pytest
 class TestPerimeter:
 
     @pytest.mark.smoke
-    @pytest.mark.parametrize("number, expected_result, expected_stdout", [
+    @pytest.mark.parametrize(
+        "number, expected_result, expected_stdout", [
         (1, 1.000, "Perimeter: 1.000\n"),
         (0, 0.000, "Perimeter: 0.000\n"),
         (None, None, "It's not a triangle\n")
