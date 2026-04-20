@@ -1,8 +1,34 @@
+# Окружение и зависимости
 .venv/
+env/
+venv/
+ENV/
+bin/
+lib/
+include/
+
+# IDE и редакторы
 .idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Кэш Python и байт-код
 __pycache__/
 *.pyc
-.env
-.DS_Store
+*.pyo
+*.pyd
+
+# Тесты и отчеты (актуально для вашего проекта)
 .coverage
 .pytest_cache/
+htmlcov/
+nosetests.xml
+coverage.xml
+*.lcov
+
+# Конфиденциальные данные
+.env
+
+# Прочее
+.flake8
