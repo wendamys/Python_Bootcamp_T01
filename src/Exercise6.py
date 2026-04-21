@@ -3,17 +3,16 @@ class SortMass:
     def sort_by_selection(self, args):
         if not args:
             return
-        mass = args
         k = 0
         min_idx = k
-        while k < len(mass)-1:
-            for i in range(k, len(mass)):
-                if mass[min_idx] > mass[i]:
+        while k < len(args)-1:
+            for i in range(k, len(args)):
+                if args[min_idx] > args[i]:
                     min_idx = i
-            mass[k], mass[min_idx] = mass[min_idx], mass[k]
+            args[k], args[min_idx] = args[min_idx], args[k]
             k += 1
             min_idx = k
-        print(mass)
+        return args
 
 
     def input_user(self):
@@ -39,8 +38,12 @@ class SortMass:
                 print("Could not parse a number. Please, try again")
 
 
+    def print_by_mass(self, args):
+        print(args)
+
+
 obj6 = SortMass()
 array = obj6.input_user()
-obj6.sort_by_selection(array)
-
+sorted_mass = obj6.sort_by_selection(array)
+obj6.print_by_mass(sorted_mass)
 
