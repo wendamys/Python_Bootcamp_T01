@@ -28,7 +28,6 @@ class Exercise10:
 
     def filter_and_print(self, users):
         adult_name = [u.name for u in users if u.age >= 18]
-        bas = [x.name for x in users if x.age >= 18]
         print(", ".join(adult_name))
 
 
