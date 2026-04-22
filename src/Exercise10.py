@@ -1,40 +1,38 @@
 from User import User
 
 
-class Exercise10(User):
+class Exercise10:
 
-    def input_user(self):
-        number_users = input()
-        user_obj_items = []
-        try:
-            number_users = int(number_users)
-            i = 0
-            while number_users > i:
-                name_user_input = input()
-                age_user_input = int(input())
-                if age_user_input > 0:
-                    user_obj_items.append(User(name_user_input, age_user_input))
-                    i += 1
-                else:
+    def input_users(self):
+        while True:
+            try:
+                number_users = input()
+                number_users = int(number_users)
+                break
+            except ValueError:
+                print("Could not parse a number. Please, try again")
+
+        users_list = []
+        while len(users_list) < number_users:
+            name = input()
+            try:
+                age = int(input())
+                if age <= 0:
                     print("Incorrect input. Age <= 0")
-        except ValueError:
-            print("Could not parse a number. Please, try again")
-            return None
-        return user_obj_items
+                    continue
+                users_list.append(User(name, age))
+            except ValueError:
+                print("Could not parse a number. Please, try again")
 
-    def adult_obj_and_print(self, args):
-        items_user_name = []
-        for user in args:
-            if user.age >= 18:
-                items_user_name.append(user.name)
-        result = ", ".join(items_user_name)
-        print(result)
+        return users_list
 
-
-
+    def filter_and_print(self, users):
+        adult_name = [u.name for u in users if u.age >= 18]
+        bas = [x.name for x in users if x.age >= 18]
+        print(", ".join(adult_name))
 
 
 obj10 = Exercise10()
-array = obj10.input_user()
-obj10.adult_obj_and_print(array)
+array = obj10.input_users()
+obj10.filter_and_print(array)
 
